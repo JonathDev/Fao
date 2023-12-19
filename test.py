@@ -8,5 +8,6 @@ popu = pd.read_csv("C:/Users/kaeli/OneDrive/Documents/GitHub/Group1/FAOSTAT_data
                 decimal='.')
 
 #popu1=popu.query("Zone in ('Chine')")
-popu1=popu[popu.Zone.str.startswith('Chine')]
+popu1=popu[popu.Zone.str.contains('Chine')]
+popu2=popu[popu.Zone.str.startswith('Chine')]
 print(popu1)
