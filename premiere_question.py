@@ -56,7 +56,7 @@ popu.sort_values(by = 'Valeur')#Trie pour voir si il n'y a pas de Valeur aberran
 popu.tail(10) #regarde les plus grande dans le cas de Valeur aberrante
 
 #%%
-popu2=popu.iloc[39:45,:]#regarde les differnet cas de la Chine
+popu2=popu[popu.Zone.str.startswith('Chine')]#regarde les differnet cas de la Chine
 print(popu2)
 #%%
 b=popu.iloc[41,10]#compare chaque valeur pour chaque chine
