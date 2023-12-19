@@ -5,7 +5,7 @@ import csv
 
 #%%
 
-popu = pd.read_csv("C:/Users/kaeli/Documents/python/FAOSTAT_data_fr_12-18-2023.csv",
+popu = pd.read_csv("C:/Users/kaeli/OneDrive/Documents/GitHub/Group1/FAOSTAT_data_fr_12-18-2023.csv",
                 dtype={'Valeur':np.float64},
                 index_col='Code zone (M49)',
                  decimal='.')
@@ -15,7 +15,7 @@ print(popu1)
 
 #%%
 
-dispoAnimal = pd.read_csv("C:/Users/kaeli/Documents/python/FAOSTAT_2013_animal.csv",
+dispoAnimal = pd.read_csv("C:/Users/kaeli/OneDrive/Documents/GitHub/Group1/FAOSTAT_2013_animal.csv",
                 dtype={'Valeur':np.float64},
                  decimal='.')
 
@@ -23,19 +23,24 @@ ListePays_A=set(dispoAnimal["Pays"].values.tolist())
 print(len(ListePays_A))
 
 
-dispoCereal = pd.read_csv("C:/Users/kaeli/Documents/python/FAOSTAT_2013_cereal.csv",
+dispoCereal = pd.read_csv("C:/Users/kaeli/OneDrive/Documents/GitHub/Group1/FAOSTAT_2013_cereal.csv",
                 dtype={'Valeur':np.float64},
                  decimal='.')
+#%%
+sous_alim = pd.read_csv("C:/Users/kaeli/OneDrive/Documents/GitHub/Group1/FAOSTAT_2013_sous_alimentation.csv",
+                dtype={'Valeur':np.float64},
+                 decimal='.')
+#%%
+ListePays_Alim=set(sous_alim["Zone"].values.tolist())
 
 #%%
-
 ListePays_C=set(dispoCereal["Pays"].values.tolist())
 print(len(ListePays_C))
 
 ListePays_C
 #%%
 
-dispoVegetal= pd.read_csv("C:/Users/kaeli/Documents/python/FAOSTAT_2013_vegetal.csv",
+dispoVegetal= pd.read_csv("C:/Users/kaeli/OneDrive/Documents/GitHub/Group1/FAOSTAT_2013_vegetal.csv",
                 dtype={'Valeur':np.float64},
                  decimal='.')
 ListePaysV=set(dispoVegetal["Pays"].values.tolist())
@@ -45,6 +50,13 @@ ListePaysV=set(dispoVegetal["Pays"].values.tolist())
 
 ListePays_V=set(dispoVegetal["Pays"].values.tolist())
 print(len(ListePays_V))
+
+#%%
+a1=ListePays_Alim.symmetric_difference(ListePays_C)
+print(a1)
+print(len(a1))
+
+
 
 
 #%%
