@@ -92,5 +92,8 @@ import math
 population_total=sum(popu_sans_chine['Valeur'])
 population_total=int(population_total*1000)
 print(population_total)
-#dispo_cereal1=dispoCereal.head(11)
-#print(dispo_cereal1)
+
+#%%
+
+dispoCereal2=dispoCereal.loc[ dispoCereal.Pays.str.contains('France') & dispoCereal.Produit.str.contains('Blé'),'Élément':]
+print(dispoCereal2) # observation de la france dans le cas du blé pour observer les relations de ses différentes données
