@@ -17,3 +17,5 @@ dispoCereal = pd.read_csv("C:/Users/kaeli/OneDrive/Documents/GitHub/Group1/FAOST
                  decimal='.')
 dispoCereal2=dispoCereal.loc[ dispoCereal.Pays.str.contains('France') & dispoCereal.Produit.str.contains('Blé'),'Élément':]
 print(dispoCereal2)
+
+#Nous remarquons que Dispo interieur = prod + import +Variation de stock -Export = Aliment pour animaux + semence + perte + traitement +autre utilisation + nourriture
