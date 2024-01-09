@@ -1,0 +1,38 @@
+a) Relation des valeur en fonction de la Disponibilité interieur
+
+Disponibilité intérieure (milliers de tonne) == 5992 // 5 992 000 000 kg
+
+Production (milliers de tonne)   ===  5169 000 000
+Importations - Quantité (milliers de tonne) === 1173 000 000 kg
+Variation de stock (milliers de tonne) == -350 000 000 kg
+
+Production + Importations - variantiion des stock  = Disponibilité intérieure   //me 
+
+b) utilisation
+
+Disponibilité intérieure (milliers de tonne) == 5992
+Semences (milliers de tonne) == 322
+Pertes (milliers de tonne) == 775
+Nourriture (milliers de tonne) ==4895
+
+
+Semences + perte + nourriture = Disponibilité intérieure // me
+
+C)  info :  63335180 pop france   
+Disponibilité alimentaire en quantité (kg/personne/an)  160.23kg/personne/an
+
+
+
+Disponibilité alimentaire (Kcal/personne/jour) 1369 Kcal/personne/jour
+
+kcal/pop/an  = 
+
+
+quantité moyenne en protéines kg disponible par habitant 
+Disponibilité de protéines en quantité (g/personne/jour) 0.03691kg/personne/jour
+kg /personne/ an  = 13,47215 kg
+
+Disponibilité de matière grasse en quantité (g/personne/jour) 0.00469kg/personne/jour
+kg/personne /an = 1,71185 kg 
+
+160.23 kgblé/personne/an ble  === 13,47215 kgprotéineble/personne/an || 1,71185 kg/personne/an
