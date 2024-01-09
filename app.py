@@ -159,37 +159,47 @@ def dispo_vegetal_mondial() :
     
     
     df_sum_dp = utility.calculate_and_sort(df_vegetals_filtred_dp, "Produit")
+    #print(f"{df_sum_dp} dataFrame")
+    
     df_sum_quantite = utility.calculate_and_sort(df_vegetals_filtred_quantite, "Produit")
+    #print(f"{df_sum_quantite} dataFrame")
+    
     df_sum_kcal = utility.calculate_and_sort(df_vegetals_filtred_kcal, "Produit")
+    #print(f"{df_sum_kcal} dataFrame")
     df_sum_dp['Valeur'] = df_sum_dp['Valeur']*1000000
     print(f'{df_sum_dp}  kg/an')
-    print('-------------------------------------------------')
+    #print('-------------------------------------------------')
     
-    print(f'{df_sum_quantite} kg/personne/an')
-    print('------------------------------------------------')
+    #print(f'{df_sum_quantite} kg/personne/an')
+    #print('------------------------------------------------')
     df_sum_kcal['Valeur'] =  df_sum_kcal['Valeur']*365
     print(f'{df_sum_kcal} kcal/personne/an' )
    
     df_ratio = pd.merge(df_sum_kcal,df_sum_quantite,how = "outer", on = ['Produit'])
     df_ratio = df_ratio.rename(columns = {'Valeur_x' : 'kcal/personne/jour'})
     df_ratio = df_ratio.rename(columns = {'Valeur_y' : 'kg/personne/jour'})
-    df_ratio['Valeur'] = df_ratio['kcal/personne/jour']/df_ratio['kg/personne/jour']
+    df_ratio['Valeur'] = df_ratio['kcal/personne/an']/df_ratio['kg/personne/an']
     print(f'{df_ratio} Kcal/kg')
     
     df_ratio['Valeur_dpi_kcal'] = df_ratio['Valeur'] * df_sum_dp['Valeur']
-    print(f'{df_ratio} kg')
+    print(f'{df_ratio} kcal/an')
     
     df_mondial  = df_ratio['Valeur_dpi_kcal'].sum()
-    print(f'{df_mondial} kcal/an')
+    return df_mondial
 
 dispo_vegetal_mondial()
 
 def nourriture_mondial_humaine():
     dp_mondial =  dispo_vegetal_mondial()
+    print(dp_mondial)
     pop = add_pop()
-    besoinMondial = 2 * pop
+    print(f"{pop} population")
+    besoinMondial = 2000 * 365 * pop
     print(besoinMondial)
     resultat = dp_mondial/besoinMondial*100
-    print(resultat) 
+    print(resultat)
+    
+     
 nourriture_mondial_humaine()
+
 
